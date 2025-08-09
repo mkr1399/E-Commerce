@@ -12,7 +12,7 @@ A full-stack e-commerce platform with admin and customer roles, featuring secure
 - **Framework**: ReactJS
 - **Styling**: Tailwind CSS
 - **Routing**: React Router
-- **API**: Fetch API
+- **API**: Fetch API/Axios
 
 #### Pages:
 
@@ -34,6 +34,7 @@ A full-stack e-commerce platform with admin and customer roles, featuring secure
 - **Framework**: Spring Boot
 - **Authentication/Security**: Spring Security, Keycloak/Auth0
 - **API Gateway**: Spring API Gateway
+- **Service Discovery**: Eureka
 - **ORM**: Hibernate / JPA
 - **Message Broker**: Spring Kafka
 - **Database**: PostgreSQL
@@ -130,7 +131,7 @@ A full-stack e-commerce platform with admin and customer roles, featuring secure
 - **Spring Kafka** used for:
   - Inventory updates
   - Order events
-  - Email notifications (optional)
+  - Email notifications
 
 ---
 
