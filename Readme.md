@@ -122,7 +122,6 @@ A full-stack e-commerce platform with admin and customer roles, featuring secure
 
 - Role-Based Access Control (RBAC) using **Keycloak** or **Auth0**
 - JWT for secure communication
-- OAuth2 integration (if applicable)
 
 ---
 
