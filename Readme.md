@@ -37,7 +37,7 @@ A full-stack e-commerce platform with admin and customer roles, featuring secure
 - **Service Discovery**: Eureka
 - **ORM**: Hibernate / JPA
 - **Message Broker**: Spring Kafka
-- **Database**: PostgreSQL
+- **Database**: MySQL
 
 #### Microservices:
 
