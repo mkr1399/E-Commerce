@@ -1,82 +1,137 @@
-Frontend:-
+# 🛍️ E-Commerce Platform
 
-Language: Typescript
-Framework/Libraries:- ReactJS, Tailwind CSS, Fetch API, React Router
+A full-stack e-commerce platform with admin and customer roles, featuring secure authentication, product listing, inventory control, shopping cart, and order processing. Built using **React + Tailwind CSS** on the frontend and **Java Spring Boot** microservices on the backend.
 
-Pages-
-- Login page/SignUp Page(Admin, Customer)
-- Customer Dashboard(Product Listing, cart component)
+---
+
+## 🔧 Tech Stack
+
+### 🖥️ Frontend
+
+- **Language**: TypeScript
+- **Framework**: ReactJS
+- **Styling**: Tailwind CSS
+- **Routing**: React Router
+- **API**: Fetch API
+
+#### Pages:
+
+- Login / Signup Page (for Admin and Customer)
+- Customer Dashboard
+  - Product Listing
+  - Cart Component
 - Product Detail Page
-- Checkout
-- CMS DashBoard(Product, Inventory Control)
+- Checkout Page
+- CMS Dashboard
+  - Product Management
+  - Inventory Control
 
+---
 
-Backend:-
-Language: Java
-Framework/Libraries:- SpringBoot, spring security, spring api gateway, Hibernate/JPA, spring Kafka
-security: keycloak or auth0
-DataBase:- PostgreSQL
+### ⚙️ Backend
 
+- **Language**: Java
+- **Framework**: Spring Boot
+- **Authentication/Security**: Spring Security, Keycloak/Auth0
+- **API Gateway**: Spring API Gateway
+- **ORM**: Hibernate / JPA
+- **Message Broker**: Spring Kafka
+- **Database**: PostgreSQL
 
-Services:
-- OrderService
-- UserService
-- InventoryService
-- CartService
-- ProductService
+#### Microservices:
 
-DB Tables:-
+- `OrderService`
+- `UserService`
+- `InventoryService`
+- `CartService`
+- `ProductService`
 
+---
 
-User:
-|
-|- ID
-|- Name
-|- email
-|- Phno
-|- Role
+## 🗃️ Database Schema
 
-Product:
-|
-|- ID
-|- Name
-|- Description
-|- Price
+### 🧑 User
+| Field     | Type        |
+|-----------|-------------|
+| ID        | UUID / INT  |
+| Name      | VARCHAR     |
+| Email     | VARCHAR     |
+| PhNo      | VARCHAR     |
+| Role      | ENUM(Admin/Customer) |
 
-Cart"
-|
-|- id
-|- user_id
-|- product_id
-|- quantity
+---
 
-Inventory:
-|
-|- ID
-|- Product_id
-|- product_quantity
+### 📦 Product
+| Field     | Type        |
+|-----------|-------------|
+| ID        | UUID / INT  |
+| Name      | VARCHAR     |
+| Description | TEXT      |
+| Price     | DECIMAL     |
 
+---
 
-OrderItems:
-|
-|- ID
-|- order_id
-|- product_id
-|- quantity
-|- price
+### 🛒 Cart
+| Field     | Type        |
+|-----------|-------------|
+| ID        | UUID / INT  |
+| User_ID   | FK → User   |
+| Product_ID| FK → Product|
+| Quantity  | INT         |
 
-Orders:
-|
-|- ID
-|- user_id
-|- total_amount
-|- status
+---
 
+### 🏪 Inventory
+| Field          | Type        |
+|----------------|-------------|
+| ID             | UUID / INT  |
+| Product_ID     | FK → Product|
+| Product_Quantity | INT       |
 
-Deployment:
+---
 
-Jenkins
+### 📑 Order Items
+| Field      | Type         |
+|------------|--------------|
+| ID         | UUID / INT   |
+| Order_ID   | FK → Orders  |
+| Product_ID | FK → Product |
+| Quantity   | INT          |
+| Price      | DECIMAL      |
 
-Additnl:
+---
 
-SonarQube
+### 📦 Orders
+| Field        | Type        |
+|--------------|-------------|
+| ID           | UUID / INT  |
+| User_ID      | FK → User   |
+| Total_Amount | DECIMAL     |
+| Status       | ENUM(Pending, Completed, Cancelled) |
+
+---
+
+## 🚀 Deployment
+
+- **CI/CD**: Jenkins
+- **Code Quality**: SonarQube
+
+---
+
+## 🛡️ Security
+
+- Role-Based Access Control (RBAC) using **Keycloak** or **Auth0**
+- JWT for secure communication
+- OAuth2 integration (if applicable)
+
+---
+
+## 📬 Messaging (Async Communication)
+
+- **Spring Kafka** used for:
+  - Inventory updates
+  - Order events
+  - Email notifications (optional)
+
+---
+
